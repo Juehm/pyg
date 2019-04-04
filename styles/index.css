@@ -1,0 +1,93 @@
+.layout {
+  width: 100vw;
+  height: 100vh;
+  max-width: 640px;
+  display: flex;
+  flex-flow: column;
+  margin: 0 auto;
+}
+.header {
+  height: 45px;
+  padding: 5px 10px;
+  background-color: #eee;
+}
+.contenr {
+  flex: 1;
+  background-color: orange;
+}
+.contenr .main_nav {
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  background-color: #fff;
+}
+.contenr .main_nav a {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+}
+.contenr .main_nav a img {
+  width: 50%;
+  display: inline-block;
+}
+.contenr .commodity {
+  padding: 10px;
+}
+.contenr .commodity .cbox {
+  width: 100%;
+  overflow: hidden;
+}
+.contenr .commodity .cbox > img {
+  width: 100%;
+  margin-bottom: 5px;
+}
+.contenr .commodity .cbox .pyg_sbox {
+  width: 49%;
+  float: left;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+.contenr .commodity .cbox .pyg_sbox:nth-of-type(even) {
+  margin-left: 2%;
+}
+.contenr .commodity .cbox .pyg_sbox img {
+  width: 100%;
+}
+.contenr .commodity .cbox .pyg_sbox .pgy_desc {
+  color: #333;
+  font-size: 13px;
+  margin: 5px 0;
+}
+.contenr .commodity .cbox .pyg_sbox .pyg_price {
+  color: red;
+}
+.footer {
+  width: 100%;
+  height: 45px;
+  background-color: #fff;
+}
+.footer .foot_nav {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 4px;
+}
+.footer .foot_nav .active {
+  color: royalblue;
+}
+.footer .foot_nav a {
+  flex: 1;
+  text-align: center;
+  color: #333;
+}
+.footer .foot_nav a span {
+  font-size: 23px;
+  display: block;
+}
+.footer .foot_nav a span:nth-last-of-type(1) {
+  font-size: 12px !important;
+  line-height: 1em;
+}
+.footer .foot_nav .mui-active {
+  color: #000;
+}

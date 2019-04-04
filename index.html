@@ -1,12 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>29-品优购</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <link rel="stylesheet" href="./lib/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/index.css">
 </head>
+
 <body>
-    
+    <div class="layout">
+        <div class="header">
+            <div class="mui-input-row mui-search">
+                <input type="search" class="mui-input-clear" placeholder="">
+            </div>
+        </div>
+        <div class="contenr">
+            <div class="mui-slider">
+                <div class="mui-slider-group  mui-slider-loop">
+                    动态渲染轮播图
+                </div>
+            </div>
+            <div class="main_nav">
+                <a href="">
+                    <img src="https://image2.suning.cn/uimg/cms/img/155411189774023862.gif?format=_is_120w_120h" alt="">
+                    <div>爆款手机</div>
+                </a>
+                <a href="">
+                    <img src="https://image1.suning.cn/uimg/cms/img/154708800857670247.png?format=_is_120w_120h.webp"
+                        alt="">
+                    <div>苏宁超市</div>
+                </a>
+                <a href="">
+                    <img src="https://image1.suning.cn/uimg/cms/img/155175138228120594.png?format=_is_120w_120h.webp"
+                        alt="">
+                    <div>生活超市</div>
+                </a>
+                <a href="">
+                    <img src="https://image2.suning.cn/uimg/cms/img/154708804944582613.png?format=_is_120w_120h.webp"
+                        alt="">
+                    <div>苏宁生鲜</div>
+                </a>
+            </div>
+            <div class="commodity">
+            </div>
+
+        </div>
+        <div class="footer">
+            <div class="foot_nav">
+                <a class="active" href="#">
+                    <span class="mui-icon mui-icon-home"></span>
+                    <span class="">首页</span>
+                </a>
+                <a class="mui-tab-item" href="#tabbar-with-chat">
+                    <span class="mui-icon mui-icon-list"></span>
+                    <span class="">分类</span>
+                </a>
+                <a class="mui-tab-item" href="#tabbar-with-contact">
+                    <span class="fa fa-shopping-cart"></span>
+                    <span class="" style='font-size: 12px'>购物车</span>
+                </a>
+                <a class="mui-tab-item" href="#tabbar-with-map">
+                    <span class="mui-icon mui-icon-contact"></span>
+                    <span class="">我的</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/template" id='pyg_bannerTemp'>
+        <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{data[data.length-1].image_src}}" /></a></div>
+        {{each data value index}}
+        <div class="mui-slider-item"><a href="#"><img src="{{value.image_src}}" /></a></div>
+        {{/each}}
+        <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{data[0].image_src}}" /></a></div>
+    </script>
+    <script type="text/template" id="pyg_commodity">
+        {{each data value index}}
+        <div class="cbox">
+            <img src="{{value.group_img}}" alt="">
+            {{each value.goods v i}}
+            <div class="pyg_sbox">
+                <a href='javascript:;' class="pgy_good">
+                    <img src="{{v.goods_small_logo}}"alt="">
+                    <div class="pgy_desc mui-ellipsis-2">{{v.goods_name}}</div>
+                    <div  class="pyg_price">￥ {{v.goods_price}}</div>
+                </a>
+                <a href="javascript:;" type="button" class="mui-btn mui-btn-primary mui-btn-outlined pyg_btncate">找相似</a>
+            </div>
+            {{/each}}
+        </div>
+        {{/each}}
+    </script>
+    <script src="./lib/mui/js/mui.min.js"></script>
+    <script src="./lib/zepto/zepto.js"></script>
+    <script src="./lib/arttemplate/template-web.js"></script>
+    <script src="./js/index.js"></script>
 </body>
+
 </html>
