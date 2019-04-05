@@ -16,51 +16,54 @@
     background-color:orange;
     overflow: scroll;
     padding-bottom: 40px;
-    .main_nav{
-        padding: 15px;
-        display: flex;
-        justify-content: space-around;
-        text-align: center;
+    display: flex;
+    overflow: hidden;
+    .conleft{
+        width: 105px;
         background-color: #fff;
-        a{
-            flex: 1;
-            font-size: 14px;
-            color: #333;
-            img{
-                width: 50%;
-                display: inline-block;
+        overflow: hidden;
+        ul{
+            width: 100%;
+            li{
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                border: 1px solid #000;
             }
         }
+        
     }
-    .commodity{
-        padding: 10px;
-        .cbox{
-            width: 100%;
+    .conright{
+        flex: 1;
+        overflow: hidden;
+        .conrbox{
+            clear: both;
+        }
+        .conr_txt{
+            padding: 3px;
+            font-size: 16px;
+        }
+        .conr_contenr{
+            clear: both;
             overflow: hidden;
-            >img{
-                width: 100%;
-                margin-bottom: 5px;
-            }
-            .pyg_sbox{
-                width: 49%;
+            a{
+                display: block;
+                width: 32%;
                 float: left;
-                background-color: #fff;
-                margin-bottom: 10px;
-                &:nth-of-type(even){
-                    margin-left: 2%;
-                }
+                text-align: center;
+                margin-left: 1%;
+               
                 img{
                     width: 100%;
+                    display: block;
                 }
-                .pgy_desc{
-                    color: #333;
-                    font-size: 13px;
-                    margin: 5px 0;
-                }
-                .pyg_price{
-                    color:red;
+                span{
+                    display: block;
+                    font-size: 14px;
+                    padding: 3px 0 12px 0;
                 }
             }
+           
         }
     }
 }

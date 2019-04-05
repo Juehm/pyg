@@ -16,53 +16,53 @@
   background-color: orange;
   overflow: scroll;
   padding-bottom: 40px;
-}
-.contenr .main_nav {
-  padding: 15px;
   display: flex;
-  justify-content: space-around;
-  text-align: center;
-  background-color: #fff;
-}
-.contenr .main_nav a {
-  flex: 1;
-  font-size: 14px;
-  color: #333;
-}
-.contenr .main_nav a img {
-  width: 50%;
-  display: inline-block;
-}
-.contenr .commodity {
-  padding: 10px;
-}
-.contenr .commodity .cbox {
-  width: 100%;
   overflow: hidden;
 }
-.contenr .commodity .cbox > img {
-  width: 100%;
-  margin-bottom: 5px;
-}
-.contenr .commodity .cbox .pyg_sbox {
-  width: 49%;
-  float: left;
+.contenr .conleft {
+  width: 105px;
   background-color: #fff;
-  margin-bottom: 10px;
+  overflow: hidden;
 }
-.contenr .commodity .cbox .pyg_sbox:nth-of-type(even) {
-  margin-left: 2%;
-}
-.contenr .commodity .cbox .pyg_sbox img {
+.contenr .conleft ul {
   width: 100%;
 }
-.contenr .commodity .cbox .pyg_sbox .pgy_desc {
-  color: #333;
-  font-size: 13px;
-  margin: 5px 0;
+.contenr .conleft ul li {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: 1px solid #000;
 }
-.contenr .commodity .cbox .pyg_sbox .pyg_price {
-  color: red;
+.contenr .conright {
+  flex: 1;
+  overflow: hidden;
+}
+.contenr .conright .conrbox {
+  clear: both;
+}
+.contenr .conright .conr_txt {
+  padding: 3px;
+  font-size: 16px;
+}
+.contenr .conright .conr_contenr {
+  clear: both;
+  overflow: hidden;
+}
+.contenr .conright .conr_contenr a {
+  display: block;
+  width: 32%;
+  float: left;
+  text-align: center;
+  margin-left: 1%;
+}
+.contenr .conright .conr_contenr a img {
+  width: 100%;
+  display: block;
+}
+.contenr .conright .conr_contenr a span {
+  display: block;
+  font-size: 14px;
+  padding: 3px 0 12px 0;
 }
 .footer {
   width: 100%;
