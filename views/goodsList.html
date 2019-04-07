@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="../lib/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/goodsList.css">
+</head>
+
+<body>
+    <div class="layout">
+        <div class="contenr">
+            <!-- 侧滑导航根容器 -->
+            <div class="mui-off-canvas-wrap mui-draggable">
+                <!-- 菜单容器 -->
+                <aside class="mui-off-canvas-right">
+                    <div class="mui-scroll-wrapper">
+                        <div class="mui-scroll">
+                            菜单具体展示内容
+                        </div>
+                    </div>
+                </aside>
+                <!-- 主页面容器 -->
+                <div class="mui-inner-wrap">
+                    <!-- 主页面标题 -->
+                    <header class="mui-bar mui-bar-nav">
+                        <a class="mui-icon mui-icon mui-icon-arrowleft"></a>
+                        <a id="offCanvasBtn" href="#offCanvasSide"
+                            class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
+                        <h1 class="mui-title">标题</h1>
+                    </header>
+                    <!-- 主界面具体展示内容 -->
+                    <!--下拉刷新容器-->
+                    <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+                        <div class="mui-scroll">
+                            <!--数据列表-->
+                            <ul class="mui-table-view mui-table-view-chevron">
+                                <li>
+                                    <a href="goodDetail.html?gid={{value.goods_id}}" class="clearfix">
+                                        <div>
+                                            <img src="../static/images/goods_cate1.png" alt="">
+                                        </div>
+                                        <div>
+                                            <span
+                                                class="mui-ellipsis-2">sdahfodsadfgadfsdfffffffffffeaswffhsofsadfew</span>
+                                            <div>￥9999</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="foot_nav">
+                <a class="" href="#">
+                    <span class="mui-icon mui-icon-home"></span>
+                    <span class="">首页</span>
+                </a>
+                <a class="active" href="#tabbar-with-chat">
+                    <span class="mui-icon mui-icon-list"></span>
+                    <span class="">分类</span>
+                </a>
+                <a class="mui-tab-item" href="#tabbar-with-contact">
+                    <span class="fa fa-shopping-cart"></span>
+                    <span class="" style='font-size: 12px'>购物车</span>
+                </a>
+                <a class="mui-tab-item" href="#tabbar-with-map">
+                    <span class="mui-icon mui-icon-contact"></span>
+                    <span class="">我的</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script type="text/template" id='goList'>
+    {{each goods value index}}
+        <li>
+            <a href="goodDetail.html?gid={{value.goods_id}}" class="clearfix">
+                <div>
+                    <img src="{{value.goods_small_logo}}" alt="">
+                </div>
+                <div>
+                    <span class="mui-ellipsis-2">{{value.goods_name}}</span>
+                    <div>￥{{value.goods_price}}</div>
+                </div>
+            </a>
+        </li>
+    {{/each}}
+    </script>
+    <script src="../lib/zepto/zepto.js"></script>
+    <script src="../lib/arttemplate/template-web.js"></script>
+    <script src="../lib/mui/js/mui.min.js"></script>
+    <script src="../lib/iscroll/iscroll.js"></script>
+    <script src="../js/goodsList.js"></script>
+</body>
+
+</html>

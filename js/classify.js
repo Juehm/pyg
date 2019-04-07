@@ -6,7 +6,7 @@ $(function(){
         lsData=JSON.parse(localStorage.getItem('cateData'))
        console.log(lsData);
        
-        if(lsData&&(Date.now()-lsData.time)< 24*60*60*1000){
+        if(lsData&&(Date.now()-lsData.time)< 240*60*60*1000){
             leftdata()
             rightdata(0)
         }else{
