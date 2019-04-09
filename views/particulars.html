@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="../lib/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/particulars.css">
+</head>
+
+<body>
+    <div class="layout">
+        <header id="header" class="mui-bar mui-bar-nav">
+            <h1 class="mui-title">导航栏</h1>
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        </header>
+        <div class="contenr">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="foot_nav">
+                <a class="" href="#">
+                    <span class="mui-icon mui-icon-weixin"></span>
+                    <span class="">微信</span>
+                </a>
+                <a class="active" href="#tabbar-with-chat">
+                    <span class="mui-icon mui-icon-chat"></span>
+                    <span class="">客服</span>
+                </a>
+                <a class="mui-tab-item" href="#tabbar-with-contact">
+                    <button type="button" class="mui-btn mui-btn-warning">立即购买</button>
+                </a>
+                <a class="mui-tab-item" href="#tabbar-with-map">
+                    <button type="button" class="mui-btn mui-btn-danger">加入购物车</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script type="text/template" id="contenr">
+        <div class="mui-slider">
+                <div class="mui-slider-group mui-slider-loop">
+                   <!--支持循环，需要重复图片节点-->
+                    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img
+                                src="{{pics.length > 0 ?pics[pics.length-1].pics_mid_url :''}}" /></a>
+                    </div>
+                    {{each pics value index}}
+                    <div class="mui-slider-item">
+                        <a href="#"><img src="{{value.pics_mid_url}}" /></a>
+                    </div>
+                    {{/each}}
+                    <!--支持循环，需要重复图片节点-->
+                    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img
+                                src="{{pics.length > 0 ?pics[0].pics_mid_url :''}}" /></a>
+                    </div>
+                </div>
+                <!-- 所有的分页器li -->
+                 <div class="mui-slider-indicator">
+                    {{each pics value index}}
+                        <div class="mui-indicator {{index == 0 ? 'mui-active' : ''}}"></div>
+                    {{/each}}
+                </div>
+            </div>
+            <!-- 产品标题 -->
+            <div class="partiName">{{goods_name}}</div>
+            <!-- 价格 -->
+            <div class="partiPrice">￥{{goods_price}}</div>
+            <ul class="partiDesc">
+                    <li>
+                        <span>已选</span>
+                        <span>白色</span>
+                    </li>
+                    <li>
+                        <span>促销</span>
+                        <span>是</span>
+                    </li>
+                    <li>
+                        <span>送到</span>
+                        <span>广州市</span>
+                    </li>
+                    <li>
+                        <span>运费</span>
+                        <span>免运费</span>
+                    </li>
+            </ul>
+        <div class="mui-content">
+                <div style="padding: 10px 10px;">
+                    <div id="segmentedControl" class="mui-segmented-control">
+                        <a class="mui-control-item mui-active" href="#item1">
+                            图文详情
+                        </a>
+                        <a class="mui-control-item" href="#item2">
+                            规格参数
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div id="item1" class="mui-control-content mui-active">
+                        {{@goods_introduce}}
+                    </div>
+                    <div id="item2" class="mui-control-content goodsPara">
+                        {{each attrs value index}}
+                            <div>
+                                <h3>{{value.attr_name.split('-')[0]}}</h3>
+                                <div>
+                                    <span>{{value.attr_name.split('-')[1]}}</span>
+                                    <span>{{value.attr_value}}</span>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+    </script>
+    <script src="../lib/zepto/zepto.js"></script>
+    <script src="../lib/arttemplate/template-web.js"></script>
+    <script src="../lib/mui/js/mui.min.js"></script>
+    <script src="../lib/iscroll/iscroll.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/particulars.js"></script>
+</body>
+
+</html>
