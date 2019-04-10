@@ -1,4 +1,5 @@
 $(function () {
+    // 发送ajax渲染轮播图
     $.ajax({
         type: 'get',
         url: 'http://157.122.54.189:9094/api/public/v1/home/swiperdata',
@@ -20,9 +21,8 @@ $(function () {
         dataType:'json',
         success:function(result){
             console.log(result);
-            var html=template('pyg_commodity',result)
-            console.log(html);
             
+            var html=template('pyg_commodity',result)   
             $('.commodity').html(html)
             
         }

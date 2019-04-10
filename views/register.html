@@ -23,13 +23,13 @@
 			}
 			
 			.mui-input-group label {
-				width: 22%;
+				width: 28%;
 			}
 			
 			.mui-input-row label~input,
 			.mui-input-row label~select,
 			.mui-input-row label~textarea {
-				width: 78%;
+				width: 72%;
 			}
 			
 			.mui-checkbox input[type=checkbox],
@@ -92,7 +92,7 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<h1 class="mui-title">登录</h1>
+			<h1 class="mui-title">注册</h1>
 		</header>
 		<div class="mui-content">
 			<form id='login-form' class="mui-input-group">
@@ -103,21 +103,15 @@
 				<div class="mui-input-row">
 					<label>密码</label>
 					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码" value="123456">
+                </div>
+                <div class="mui-input-row">
+					<label>确认密码</label>
+					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码" value="123456">
 				</div>
 			</form>
-			<form class="mui-input-group">
-				<ul class="mui-table-view mui-table-view-chevron">
-					<li class="mui-table-view-cell">
-						自动登录
-						<div id="autoLogin" class="mui-switch">
-							<div class="mui-switch-handle"></div>
-						</div>
-					</li>
-				</ul>
-			</form>
 			<div class="mui-content-padded">
-				<button id='login' class="mui-btn mui-btn-block mui-btn-primary">登录</button>
-				<div class="link-area"><a id='reg' href="./register.html">注册账号</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a>
+				<button id='login' class="mui-btn mui-btn-block mui-btn-primary">注册</button>
+				<div class="link-area"><a id='reg' href="./login.html">已有账号去登陆</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a>
 				</div>
 			</div>
 			<div class="mui-content-padded oauth-area">
@@ -129,7 +123,7 @@
         <script src="../lib/mui/js/mui.min.js"></script>
         <script src="../lib/iscroll/iscroll.js"></script>
         <script src="../js/common.js"></script>
-        <script src="../js/login.js"></script>
+        <script src="../js/register.js"></script>
 	</body>
 
 </html>

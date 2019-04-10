@@ -14,13 +14,12 @@ $(function () {
     // }; 
     $.ajax({
         type: 'get',
-        headers: { 
-            "Authorization":sessionStorage.getItem('verify')
-        },
         url: 'http://157.122.54.189:9094/api/public/v1/goods/detail',
         data: '?goods_id=43986',
         dataType: 'json',
-        
+        // headers: { 
+        //     "Authorization":sessionStorage.getItem('verify')
+        // },
         success: function (result) {
 
              // 为info赋值
@@ -61,14 +60,24 @@ $(function () {
             $.ajax({
                 type:'post',
                 url:'http://157.122.54.189:9094/api/public/v1/my/cart/add',
-                data:JSON.stringify(info),
+                data:{info:JSON.stringify(info)},
                 dataType:'json',
+                headers: { 
+                    "Authorization":sessionStorage.getItem('verify')
+                },
                 success:function(result){
                     console.log(result);   
                     if(result.meta.status==401){
-                        console.log(info);         
+                        mui.toast('登录已过期，请重新登录');
+                        location.href = './login.html?redirectUrl=' + escape(location.href)      
                     } else{
-                        console.log('ok');       
+                        mui.confirm('添加成功，是否查看购物车？', '温馨提示', ['跳转', '取消'], function (e) {
+                            // index代表当前按钮的索引，索引从0开始
+                            if (e.index == 0) {
+                                // 跳转到购物车页面
+                                location.href='shoppingCart.html'
+                            }
+                        });       
                     }
                 }
             })

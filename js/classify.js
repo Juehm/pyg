@@ -4,8 +4,8 @@ $(function(){
     function render(){
 
         lsData=JSON.parse(localStorage.getItem('cateData'))
-       console.log(lsData);
-       
+        console.log(lsData);
+        
         if(lsData&&(Date.now()-lsData.time)< 240*60*60*1000){
             leftdata()
             rightdata(0)
@@ -19,8 +19,7 @@ $(function(){
     var cateData
 
     function ajaj(){
-        $.get('http://157.122.54.189:9094/api/public/v1/categories',function(result){
-
+        $.get('http://157.122.54.189:9094/api/public/v1/categories',function(result){      
             cateData={'list':result.data,'time':Date.now()}
             localStorage.setItem('cateData',JSON.stringify(cateData))
             leftdata()
@@ -55,11 +54,6 @@ $(function(){
                 if (imgcount==1){
                     var iscrollhh = new IScroll('.conright')          
                 }
-            })
-           
+            })       
     }
-
-    
-    
-
 })
